@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "woods",
+  "info": {
+    "name": "wood"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "top_guitar": {
+      "via": "top_wood",
+      "collection": "guitars"
+    },
+    "side_guitar": {
+      "via": "side_wood",
+      "collection": "guitars"
+    },
+    "back_guitar": {
+      "via": "back_wood",
+      "collection": "guitars"
+    },
+    "neck_guitar": {
+      "via": "neck_wood",
+      "collection": "guitars"
+    },
+    "fretboard_guitars": {
+      "via": "fretboard_wood",
+      "collection": "guitars"
+    }
+  }
+}

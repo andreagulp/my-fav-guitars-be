@@ -1,0 +1,132 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guitars",
+  "info": {
+    "name": "guitars",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "producer": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "body_shape": {
+      "type": "string"
+    },
+    "guitar_slug": {
+      "type": "uid",
+      "targetField": "model"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "guitars"
+    },
+    "img_main": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "side_wood": {
+      "model": "wood",
+      "via": "side_guitar"
+    },
+    "top_wood": {
+      "model": "wood",
+      "via": "top_guitar"
+    },
+    "back_wood": {
+      "model": "wood",
+      "via": "back_guitar"
+    },
+    "bracing_pattern": {
+      "type": "string"
+    },
+    "construction_note": {
+      "type": "richtext"
+    },
+    "neck_shape": {
+      "type": "string"
+    },
+    "neck_wood": {
+      "model": "wood",
+      "via": "neck_guitar"
+    },
+    "nut_width": {
+      "type": "decimal"
+    },
+    "string_spacing": {
+      "type": "decimal"
+    },
+    "fretboard_wood": {
+      "model": "wood",
+      "via": "fretboard_guitars"
+    },
+    "fretboard_radius": {
+      "type": "decimal"
+    },
+    "frets_number": {
+      "type": "integer"
+    },
+    "img_gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "solid_top": {
+      "type": "boolean"
+    },
+    "solid_side": {
+      "type": "boolean"
+    },
+    "solid_back": {
+      "type": "boolean"
+    },
+    "scale_lenght": {
+      "type": "integer"
+    },
+    "cutaway": {
+      "type": "boolean"
+    },
+    "body_width": {
+      "type": "decimal"
+    },
+    "body_length": {
+      "type": "decimal"
+    },
+    "body_depth": {
+      "type": "decimal"
+    },
+    "eletric": {
+      "type": "boolean"
+    },
+    "loves_count": {
+      "type": "integer"
+    }
+  }
+}
